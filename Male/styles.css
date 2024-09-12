@@ -1,0 +1,257 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    transition: 0.3s ease 0s all;
+}
+
+
+@font-face {
+    font-family: Alvi;
+    src: url(fonts/Alviona.ttf);
+}
+@font-face {
+    font-family: Lemon;
+    src: url(fonts/Lemon\ Mocktail\ .ttf);
+}
+@font-face {
+    font-family: Rover;
+    src: url(fonts/Sign\ Rover\ Layered.ttf);
+}
+@font-face {
+    font-family: Alvi;
+    src: url(fonts/Alviona.ttf);
+}
+@font-face {
+    font-family: Alvi;
+    src: url(fonts/Alviona.ttf);
+}
+
+
+/* Pantalla de carga */
+#loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2e2e2e;
+    color: white;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.loading-bar-container {
+    width: 80%;
+    max-width: 300px;
+    height: 10px;
+    background-color: #444;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    width: 0;
+    height: 100%;
+    background-color: white;
+    animation: load 3s forwards;
+}
+
+@keyframes load {
+    100% { width: 100%; }
+}
+
+/* Ocultación inicial del contenido principal y del header */
+.hidden {
+    display: none;
+}
+
+.hidden-header {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    backdrop-filter: blur(10px); /* Aplicación del desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para navegadores WebKit */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    transition: opacity 0.5s;
+    z-index: 5000;
+    font-family: Lemon;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+/* Efectos de animación */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s, transform 0.5s;
+    font-family: Alvi;
+}
+
+.section h1, .section h2, .section p, .btn {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.section.appear h1, 
+.section.appear h2, 
+.section.appear p, 
+.section.appear .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto de máquina de escribir */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid white;
+    animation: typing 3s steps(20) forwards, blink 0.7s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Estilos del botón */
+.btn {
+    margin-top: 70px;
+    padding: 10px 20px;
+    background-color: rgb(231, 112, 132);
+    border: none;
+    border-radius: 5px;
+    color: pink;;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Alvi;
+    transition: 0.3s ease 0s all;
+}
+
+.btn:hover {
+    background-color: rgb(201, 75, 96);
+    color: pink;
+}
+
+/* Fondos de las secciones */
+.section-bg-1 { background-color: #6a1b9a; color: white; }
+.section-bg-2 { background-color: #536dfe; color: white; }
+.section-bg-3 { background-color: #ff4081; color: white; }
+.section-bg-4 { background-image: url('darek.jpg'); background-size: cover; background-attachment: fixed; color: white; }
+.section-final { background-color: #eca438; color: white; }
+
+/* Efecto parallax */
+.parallax {
+    background-attachment: fixed;
+    background-image: url(imagenes/section4.png);
+}
+
+/* Estilo del texto en la sección final */
+.section-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-final p {
+    font-size: 1.2rem;
+    max-width: 800px;
+}
+
+
+#hero{
+    background-image: url(imagenes/Diseño\ sin\ título.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo{
+    width: 80%;
+    height: 80vh;
+    backdrop-filter: blur(5px); /* Aplicación del desenfoque */
+    -webkit-backdrop-filter: blur(5px); /* Soporte para navegadores WebKit */
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.fondo .fresa{
+    position: absolute;
+    top: -100px;
+    right: 10;
+}
+.fondo .fresa img{
+    width: 200px;
+}
+.portada h1{
+   color: rgb(231, 112, 132);
+   font-family: Alvi;
+   font-size: 70px;
+
+   animation: float 3s ease-in-out infinite; /* Aplicando la animación */
+}
+.portada p{
+    font-size: 20px;
+    font-family: Alvi;
+    color: white;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px); /* Posición inicial y final */
+    }
+    50% {
+        transform: translateY(-10px); /* Flota hacia arriba */
+    }
+}
+
+.content-section{
+    width: 800px;
+    padding: 40px;
+    backdrop-filter: blur(10px); /* Aplicación del desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para navegadores WebKit */
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 15px;
+}
+
+@keyframes show{
+    from{
+        opacity: 0;
+        scale: 20%;
+    }
+
+    to{
+        opacity: 1;
+        scale: 130%;
+    }
+}
+
+.content-section{
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 30%;
+    animation-fill-mode: both;
+}
